@@ -1,0 +1,10 @@
+spring:
+application.name: WaterringPlantService
+h2.console:
+#Console not working with webflux
+#https://stackoverflow.com/questions/52949088/h2-db-not-accessible-at-localhost8080-h2-console-when-using-webflux
+enabled: true
+path: /h2
+datasource:
+url: jdbc:h2:mem:plant
+driverClassName: org.h2.Driver
