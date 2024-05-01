@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface PlantRepository: JpaRepository<PlantEntity, Long> {
+
+
+    fun findById(id: Int): PlantEntity
 }

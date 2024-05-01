@@ -1,11 +1,10 @@
 package org.injinity.wateringplantservice
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+
 
 @RestController
+@CrossOrigin("http://localhost:4200")
 @RequestMapping("plant")
 class PlantController(val plantService: PlantService) {
 
@@ -13,4 +12,13 @@ class PlantController(val plantService: PlantService) {
     fun getPlantById(@PathVariable id: Long): PlantEntity {
         return plantService.getPlantById(id)
     }
+   @GetMapping("")
+   fun getAllPlants(): List<PlantEntity> {
+       return plantService.getAllPlants()
+   }
+
+   @PatchMapping("")
+   fun patchPlant(@RequestBody updates: PlantDto){
+       this.plantService.patchPlant(updates)
+   }
 }
