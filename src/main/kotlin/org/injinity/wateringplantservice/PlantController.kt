@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*
 
 
 @RestController
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE])
 @RequestMapping("plant")
 class PlantController(val plantService: PlantService) {
 
@@ -17,8 +17,8 @@ class PlantController(val plantService: PlantService) {
        return plantService.getAllPlants()
    }
 
-   @PatchMapping("")
+   @PutMapping("")
    fun patchPlant(@RequestBody updates: PlantDto){
-       this.plantService.patchPlant(updates)
+       this.plantService.putPlant(updates)
    }
 }

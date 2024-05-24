@@ -11,6 +11,6 @@ data class PlantEntity(
         var name: String,
         var location: String,
         var photo: String,
-        var waterred: Boolean,
-        var waterredDate: Date
+        var watered: Boolean,
+        var wateredDate: Date
 )
