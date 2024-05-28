@@ -5,7 +5,7 @@ class PlantMapper{
         dto.name?.let { entity.name = it }
         dto.location?.let { entity.location = it }
         dto.photo?.let { entity.photo = it }
-        dto.waterred?.let { entity.waterred = it }
-        dto.waterredDate?.let { entity.waterredDate = it }
+        dto.watered?.let { entity.watered = it }
+        dto.wateredDate?.let { entity.wateredDate = it }
     }
 }

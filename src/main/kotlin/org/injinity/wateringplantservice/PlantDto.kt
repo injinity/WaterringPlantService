@@ -7,6 +7,6 @@ data class PlantDto(
         var name: String? = null,
         var location: String? = null,
         var photo: String? = null,
-        var waterred: Boolean? = null,
-        var waterredDate: Date? = null
+        var watered: Boolean? = null,
+        var wateredDate: Date? = null
 )

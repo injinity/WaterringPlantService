@@ -15,7 +15,7 @@ class PlantService (val plantRepository: PlantRepository) {
         return plantRepository.findAll()
     }
 
-    fun patchPlant(dto: PlantDto){
+    fun putPlant(dto: PlantDto){
         var plantEntity = plantRepository.findById(dto.id).orElseThrow{ ResponseStatusException(HttpStatus.NOT_FOUND) }
         plantMapper.plantDtoToEntity(dto, plantEntity)
         plantRepository.save(plantEntity)
