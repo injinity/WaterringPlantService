@@ -1,7 +1,7 @@
 package org.injinity.wateringplantservice
 
 class PlantMapper{
-    fun plantDtoToEntity(dto: PlantDto, entity: PlantEntity){
+    fun plantDtoToEntity(dto: PlantRequest, entity: PlantEntity){
         dto.name?.let { entity.name = it }
         dto.location?.let { entity.location = it }
         dto.photo?.let { entity.photo = it }
