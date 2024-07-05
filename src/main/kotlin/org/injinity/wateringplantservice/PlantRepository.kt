@@ -7,5 +7,4 @@ import org.springframework.stereotype.Repository
 interface PlantRepository: JpaRepository<PlantEntity, Long> {
 
 
-    fun findById(id: Int): PlantEntity
 }

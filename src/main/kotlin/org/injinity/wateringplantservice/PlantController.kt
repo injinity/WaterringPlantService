@@ -12,13 +12,13 @@ class PlantController(val plantService: PlantService) {
     fun getPlantById(@PathVariable id: Long): PlantEntity {
         return plantService.getPlantById(id)
     }
-   @GetMapping("")
+   @GetMapping
    fun getAllPlants(): List<PlantEntity> {
        return plantService.getAllPlants()
    }
 
-   @PutMapping("")
-   fun patchPlant(@RequestBody updates: PlantDto){
+   @PutMapping
+   fun patchPlant(@RequestBody updates: PlantRequest){
        this.plantService.putPlant(updates)
    }
 }
