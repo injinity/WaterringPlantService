@@ -7,5 +7,6 @@ class PlantMapper{
         dto.photo?.let { entity.photo = it }
         dto.watered?.let { entity.watered = it }
         dto.wateredDate?.let { entity.wateredDate = it }
+        dto.daysBetweenHydrate?.let {entity.daysBetweenHydrate = it}
     }
 }

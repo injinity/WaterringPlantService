@@ -4,7 +4,8 @@ CREATE TABLE "PUBLIC"."PLANTS" (
     location VARCHAR(255),
     photo VARCHAR(255),
     watered BOOLEAN,
-    watered_date DATE
+    watered_date DATE,
+    days_between_hydrate INT DEFAULT 7
 );
 
 INSERT INTO "PUBLIC"."PLANTS" (name, location, photo, watered, watered_date) VALUES
