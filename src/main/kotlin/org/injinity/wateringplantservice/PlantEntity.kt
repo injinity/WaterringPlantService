@@ -13,5 +13,7 @@ data class PlantEntity(
         var photo: String,
         var watered: Boolean,
         @Column(name = "WATERED_DATE")
-        var wateredDate: Date
+        var wateredDate: Date,
+        @Column(name = "DAYS_BETWEEN_HYDRATE")
+        var daysBetweenHydrate: Long
 )
