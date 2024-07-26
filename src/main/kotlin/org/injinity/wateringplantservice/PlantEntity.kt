@@ -8,9 +8,14 @@ import java.sql.Date
 data class PlantEntity(
         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Long,
+        @Column(name = "NAME")
         var name: String,
+        @Column(name = "LOCATION")
         var location: String,
-        var photo: String,
+        @Lob
+        @Column(name = "PHOTO", columnDefinition = "BLOB")
+        var photo: ByteArray,
+        @Column(name = "WATERED")
         var watered: Boolean,
         @Column(name = "WATERED_DATE")
         var wateredDate: Date,

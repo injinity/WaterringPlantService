@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*
 class PlantController(val plantService: PlantService) {
 
     @GetMapping("{id}")
-    fun getPlantById(@PathVariable id: Long): PlantEntity {
+    fun getPlantById(@PathVariable id: Long): PlantRequest {
         return plantService.getPlantById(id)
     }
    @GetMapping
-   fun getAllPlants(): List<PlantEntity> {
+   fun getAllPlants(): List<PlantRequest> {
        return plantService.getAllPlants()
    }
 
