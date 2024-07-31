@@ -7,17 +7,17 @@ import org.springframework.web.server.ResponseStatusException
 @Service
 class PlantService (val plantRepository: PlantRepository) {
     val plantMapper: PlantMapper = PlantMapper()
-    fun getPlantById(id: Long): PlantEntity{
-        return plantRepository.findById(id).orElseThrow{ ResponseStatusException(HttpStatus.NOT_FOUND) }
+    fun getPlantById(id: Long): PlantRequest{
+        return plantMapper.plantEntityToRequest(plantRepository.findById(id).orElseThrow{ ResponseStatusException(HttpStatus.NOT_FOUND) })
     }
 
-    fun getAllPlants(): List<PlantEntity>{
-        return plantRepository.findAll()
+    fun getAllPlants(): List<PlantRequest>{
+        return plantRepository.findAll().map { plantMapper.plantEntityToRequest(it) }
     }
 
-    fun putPlant(dto: PlantRequest){
-        var plantEntity = plantRepository.findById(dto.id).orElseThrow{ ResponseStatusException(HttpStatus.NOT_FOUND) }
-        plantMapper.plantDtoToEntity(dto, plantEntity)
+    fun putPlant(request: PlantRequest){
+        var plantEntity = plantRepository.findById(request.id).orElseThrow{ ResponseStatusException(HttpStatus.NOT_FOUND) }
+        plantMapper.plantRequestToEntity(request, plantEntity)
         plantRepository.save(plantEntity)
     }
 }
