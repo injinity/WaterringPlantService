@@ -7,7 +7,6 @@ data class PlantRequest(
         var name: String? = null,
         var location: String? = null,
         var photo: String? = null,
-        var watered: Boolean? = null,
         var wateredDate: Date? = null,
         var daysBetweenHydrate: Long? = null
 )

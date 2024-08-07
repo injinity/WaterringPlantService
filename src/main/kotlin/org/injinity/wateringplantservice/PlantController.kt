@@ -21,4 +21,9 @@ class PlantController(val plantService: PlantService) {
    fun patchPlant(@RequestBody updates: PlantRequest){
        this.plantService.putPlant(updates)
    }
+
+    @PostMapping
+    fun postPlant(@RequestBody plant: PlantRequest){
+        this.plantService.postPlant(plant)
+    }
 }
