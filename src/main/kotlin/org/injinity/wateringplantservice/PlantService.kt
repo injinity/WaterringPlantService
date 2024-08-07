@@ -20,4 +20,9 @@ class PlantService (val plantRepository: PlantRepository) {
         plantMapper.plantRequestToEntity(request, plantEntity)
         plantRepository.save(plantEntity)
     }
+
+    fun postPlant(plant: PlantRequest) {
+        var entity = plantMapper.plantRequestToEntity(plant)
+        plantRepository.save(entity)
+    }
 }

@@ -15,10 +15,12 @@ data class PlantEntity(
         @Lob
         @Column(name = "PHOTO", columnDefinition = "BLOB")
         var photo: ByteArray,
-        @Column(name = "WATERED")
-        var watered: Boolean,
         @Column(name = "WATERED_DATE")
         var wateredDate: Date,
         @Column(name = "DAYS_BETWEEN_HYDRATE")
         var daysBetweenHydrate: Long
-)
+){
+        constructor(): this(
+                -1, "", "", ByteArray(0), Date(0), -1
+        )
+}
