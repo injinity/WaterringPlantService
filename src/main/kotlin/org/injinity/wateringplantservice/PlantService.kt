@@ -15,6 +15,10 @@ class PlantService (val plantRepository: PlantRepository) {
         return plantRepository.findAll().map { plantMapper.plantEntityToRequest(it) }
     }
 
+    fun getAllPlantsWithoutPhoto(): List<PlantRequest> {
+        return plantRepository.findAllWithoutImage().map { plantMapper.plantEntityToRequest(it) }
+    }
+
     fun putPlant(request: PlantRequest){
         var plantEntity = plantRepository.findById(request.id).orElseThrow{ ResponseStatusException(HttpStatus.NOT_FOUND) }
         plantMapper.plantRequestToEntity(request, plantEntity)
