@@ -19,7 +19,7 @@ class PlantMapper{
         entity.id.let { request.id  = it }
         entity.name.let { request.name = it }
         entity.location.let { request.location = it }
-        entity.photo.let { request.photo = Base64.encode(it, 0) }
+        entity.photo?.let { request.photo = Base64.encode(it, 0) }
         entity.wateredDate.let { request.wateredDate = it }
         entity.daysBetweenHydrate.let {request.daysBetweenHydrate = it}
         return request
