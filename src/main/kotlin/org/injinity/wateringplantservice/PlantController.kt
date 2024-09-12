@@ -17,6 +17,11 @@ class PlantController(val plantService: PlantService) {
        return plantService.getAllPlants()
    }
 
+    @GetMapping("info")
+    fun getAllPlantsWithoutPhoto(): List<PlantRequest> {
+        return plantService.getAllPlantsWithoutPhoto()
+    }
+
    @PutMapping
    fun patchPlant(@RequestBody updates: PlantRequest){
        this.plantService.putPlant(updates)

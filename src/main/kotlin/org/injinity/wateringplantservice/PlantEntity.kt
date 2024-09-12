@@ -13,14 +13,14 @@ data class PlantEntity(
         @Column(name = "LOCATION")
         var location: String,
         @Lob
-        @Column(name = "PHOTO", columnDefinition = "BLOB")
-        var photo: ByteArray,
+        @Column(name = "PHOTO", columnDefinition = "BLOB", nullable = true)
+        var photo: ByteArray? = null,
         @Column(name = "WATERED_DATE")
         var wateredDate: Date,
         @Column(name = "DAYS_BETWEEN_HYDRATE")
         var daysBetweenHydrate: Long
 ){
         constructor(): this(
-                -1, "", "", ByteArray(0), Date(0), -1
+                -1, "", "", null, Date(0), -1
         )
 }
